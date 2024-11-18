@@ -113,8 +113,8 @@ lspconfig["lua_ls"].setup({
 	},
 })
 
--- configure c, c++ server
 lspconfig["clangd"].setup({
+	cmd = { "/Library/Developer/CommandLineTools/usr/bin/clangd" },
 	capabilities = capabilities,
 	on_attach = on_attach,
 })
