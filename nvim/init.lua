@@ -1,16 +1,6 @@
-require("aboli.plugins-setup")
-require("aboli.core.options")
-require("aboli.core.keymaps")
-require("aboli.core.colorscheme")
-require("aboli.plugins.comment")
-require("aboli.plugins.nvim-tree")
-require("aboli.plugins.lualine")
-require("aboli.plugins.telescope")
-require("aboli.plugins.nvim-cmp")
-require("aboli.plugins.lsp.mason")
-require("aboli.plugins.lsp.lspsaga")
-require("aboli.plugins.lsp.lspconfig")
-require("aboli.plugins.lsp.null-ls")
-require("aboli.plugins.autopairs")
-require("aboli.plugins.treesitter")
-require("aboli.plugins.vim-be-good")
+-- vim.g.netrw_banner = 
+-- vim.g.netrw_liststyle = 3
+-- vim.g.netrw_winsize = 20
+-- vim.g.netrw_bufsettings = 'noma nomod nu rnu nobl nowrap ro'
+
+require("aboli")
