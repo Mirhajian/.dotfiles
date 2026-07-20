@@ -1,0 +1,29 @@
+# The default config file is in: 
+#   "$HOME/Library/Application\ Support/com.mitchellh.ghostty/config"
+#
+# I've added this line to the default config file to have the the
+# config file in the XDG path:
+#   config-file = "$HOME/.config/ghostty/config"
+#
+# To reload the ghostty: command + shift + comma
+
+# To list other themes: ghostty +list-themes
+#
+# theme = 0x96f 
+# theme = Catppuccin Frappe
+# theme = Batman
+theme = Dark Modern
+# theme = Catpuccin Latte
+# theme = Atom
+# theme = Catppuccin Latte
+
+# font-family = Andale Mono
+# font-family = Courier New
+
+# background-opacity = 0
+# background-blur = 150
+
+title = "Terminal"
+# unbind = ctrl+p
+# keybind = ctrl+'=clear_screen
+

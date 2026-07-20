@@ -1,0 +1,96 @@
+{
+  "schemes" : [
+    {
+      "buttons" : {
+        "mappings" : [
+
+        ]
+      },
+      "if" : {
+        "device" : {
+          "productName" : "HMBT130SL",
+          "vendorID" : "0x1235",
+          "productID" : "0xaa22",
+          "category" : "mouse"
+        }
+      },
+      "scrolling" : {
+        "reverse" : {
+          "vertical" : true
+        },
+        "modifiers" : {
+          "vertical" : {
+            "command" : {
+              "type" : "preventDefault"
+            }
+          }
+        },
+        "acceleration" : {
+          "vertical" : 1
+        },
+        "distance" : {
+          "vertical" : 3
+        },
+        "speed" : {
+          "vertical" : 0
+        }
+      },
+      "pointer" : {
+        "disableAcceleration" : false
+      }
+    },
+    {
+      "if" : {
+        "device" : {
+          "productName" : "Apple Internal Keyboard \/ Trackpad",
+          "vendorID" : "0x5ac",
+          "productID" : "0x281",
+          "category" : "trackpad"
+        }
+      },
+      "scrolling" : {
+        "acceleration" : {
+          "vertical" : 1
+        }
+      },
+      "buttons" : {
+        "mappings" : [
+          {
+            "option" : false,
+            "command" : false,
+            "button" : 2,
+            "action" : "launchpad",
+            "control" : false,
+            "shift" : false
+          }
+        ]
+      }
+    },
+    {
+      "if" : {
+        "device" : {
+          "productName" : "HMBT130SL",
+          "category" : "mouse",
+          "vendorID" : "0x46d",
+          "productID" : "0xb016",
+          "serialNumber" : "EC:24:45:81:01:65"
+        }
+      },
+      "scrolling" : {
+        "reverse" : {
+          "vertical" : true
+        },
+        "acceleration" : {
+          "vertical" : 1
+        },
+        "distance" : {
+          "vertical" : "59.2px"
+        },
+        "speed" : {
+          "vertical" : 0
+        }
+      }
+    }
+  ],
+  "$schema" : "https:\/\/schema.linearmouse.app\/0.10.0"
+}

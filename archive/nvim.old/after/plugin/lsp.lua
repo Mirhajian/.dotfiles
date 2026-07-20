@@ -1,0 +1,85 @@
+-- -- Reserve space in gutter
+-- vim.opt.signcolumn = "yes"
+--
+-- --------------------------------------------------
+-- -- Capabilities (cmp)
+-- --------------------------------------------------
+-- local capabilities = require("cmp_nvim_lsp").default_capabilities()
+--
+-- --------------------------------------------------
+-- -- LSP Keymaps
+-- --------------------------------------------------
+-- vim.api.nvim_create_autocmd("LspAttach", {
+--   desc = "LSP actions",
+--   callback = function(event)
+--     local opts = { buffer = event.buf }
+--
+--     vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+--     vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+--     vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+--     vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+--     vim.keymap.set("n", "go", vim.lsp.buf.type_definition, opts)
+--     vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+--     vim.keymap.set("n", "gs", vim.lsp.buf.signature_help, opts)
+--     vim.keymap.set("n", "<F2>", vim.lsp.buf.rename, opts)
+--     vim.keymap.set({ "n", "x" }, "<F3>", function()
+--       vim.lsp.buf.format({ async = true })
+--     end, opts)
+--     vim.keymap.set("n", "<F4>", vim.lsp.buf.code_action, opts)
+--   end,
+-- })
+--
+-- --------------------------------------------------
+-- -- Helper root detection (replacement for root_pattern)
+-- --------------------------------------------------
+-- local function root_pattern(...)
+--   local patterns = { ... }
+--   return function(fname)
+--     local root = vim.fs.root(fname, patterns)
+--     return root or vim.loop.cwd()
+--   end
+-- end
+--
+-- --------------------------------------------------
+-- -- SourceKit
+-- --------------------------------------------------
+-- vim.lsp.config("sourcekit", {
+--   cmd = { "sourcekit-lsp" },
+--   filetypes = { "swift", "objc", "objcpp", "c", "cpp" },
+--   root_dir = root_pattern("Package.swift", ".git"),
+--   capabilities = capabilities,
+-- })
+-- vim.lsp.enable("sourcekit")
+--
+-- --------------------------------------------------
+-- -- AST Grep
+-- --------------------------------------------------
+-- vim.lsp.config("ast_grep", {
+--   cmd = { "ast-grep", "lsp" },
+--   filetypes = {
+--     "c","cpp","rust","go","java","python",
+--     "javascript","typescript","html","css",
+--     "kotlin","dart","lua"
+--   },
+--   root_dir = root_pattern("sgconfig.yaml", "sgconfig.yml"),
+--   capabilities = capabilities,
+-- })
+-- vim.lsp.enable("ast_grep")
+--
+-- --------------------------------------------------
+-- -- CMP
+-- --------------------------------------------------
+-- local cmp = require("cmp")
+--
+-- cmp.setup({
+--   sources = {
+--     { name = "nvim_lsp" },
+--   },
+--   snippet = {
+--     expand = function(args)
+--       vim.snippet.expand(args.body)
+--     end,
+--   },
+--   mapping = cmp.mapping.preset.insert({}),
+-- })
+--
