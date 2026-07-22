@@ -1,0 +1,113 @@
+"$schema" = 'https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json'
+version = 3
+final_space = true
+console_title_template = '{{ if .Segments.Git.RepoName }}{{ .Segments.Git.RepoName }}{{ else }}{{ .Folder }}{{ end }}'
+
+[palette]
+  sapphire = '#74c7ec'
+  teal     = '#94e2d5'
+  mauve    = '#cba6f7'
+  success  = '#a6e3a1'
+  danger   = '#f38ba8'
+  overlay  = '#6c7086'
+  base     = '#1e1e2e'
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    type = 'path'
+    style = 'diamond'
+    leading_diamond = " \ue0b6"
+    trailing_diamond = ''
+    background = 'p:sapphire'
+    foreground = 'p:base'
+    template = ' {{ .Path }} '
+    [blocks.segments.options]
+      style = 'full'
+      home_icon = '~'
+
+  [[blocks.segments]]
+    type = 'node'
+    style = 'diamond'
+    leading_diamond = ''
+    trailing_diamond = ''
+    background = 'p:teal'
+    foreground = 'p:base'
+    template = ' {{ .Full }} '
+
+  [[blocks.segments]]
+    type = 'python'
+    style = 'diamond'
+    leading_diamond = ''
+    trailing_diamond = ''
+    background = 'p:teal'
+    foreground = 'p:base'
+    template = ' {{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }} '
+    [blocks.segments.options]
+      fetch_virtual_env = true
+
+  [[blocks.segments]]
+    type = 'go'
+    style = 'diamond'
+    leading_diamond = ''
+    trailing_diamond = ''
+    background = 'p:teal'
+    foreground = 'p:base'
+    template = ' {{ .Full }} '
+
+  [[blocks.segments]]
+    type = 'git'
+    style = 'diamond'
+    leading_diamond = ''
+    trailing_diamond = ''
+    background = 'p:mauve'
+    foreground = 'p:base'
+    template = ' {{ .HEAD }}{{ if .Working.Changed }} !{{ add .Working.Added .Working.Modified .Working.Deleted .Working.Untracked }}{{ end }}{{ if gt .Ahead 0 }} ↑{{ .Ahead }}{{ end }}{{ if gt .Behind 0 }} ↓{{ .Behind }}{{ end }} '
+    [blocks.segments.options]
+      fetch_status = true
+      branch_icon = ''
+
+  [[blocks.segments]]
+    type = 'text'
+    style = 'diamond'
+    leading_diamond = ''
+    trailing_diamond = "\ue0b4"
+    foreground = 'p:base'
+    template = "\u200b"
+    background_templates = [
+      '{{ if .Segments.Git.HEAD }}p:mauve{{ else if .Segments.Go.Full }}p:teal{{ else if .Segments.Python.Full }}p:teal{{ else if .Segments.Node.Full }}p:teal{{ else }}p:sapphire{{ end }}'
+    ]
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'right'
+
+  [[blocks.segments]]
+    type = 'executiontime'
+    style = 'plain'
+    foreground = 'p:overlay'
+    template = '{{ .FormattedMs }}'
+    [blocks.segments.options]
+      threshold = 500
+      style = 'round'
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    type = 'status'
+    style = 'plain'
+    foreground = 'p:success'
+    foreground_templates = ['{{ if gt .Code 0 }}p:danger{{ end }}']
+    template = " \ueeed ❯"
+    [blocks.segments.options]
+      always_enabled = true
+
+[secondary_prompt]
+  foreground = 'p:overlay'
+  template = '❯❯ '

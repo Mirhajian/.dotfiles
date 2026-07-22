@@ -12,16 +12,17 @@
 # theme = 0x96f 
 # theme = Catppuccin Frappe
 # theme = Batman
-theme = Dark Modern
-# theme = Catpuccin Latte
+# theme = Matte Black
+# theme = Dark Modern
+theme = Catppuccin Mocha 
 # theme = Atom
 # theme = Catppuccin Latte
 
 # font-family = Andale Mono
 # font-family = Courier New
 
-# background-opacity = 0
-# background-blur = 150
+background-opacity = 0.55
+background-blur = 150
 
 title = "Terminal"
 # unbind = ctrl+p
